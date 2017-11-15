@@ -2,8 +2,8 @@
 
 * [前言](README.md)
 * [Linux system program](linux.md)
-* Linux Shell
-* Linux kernel
+* [Linux Shell](linux-shell.md)
+* [Linux kernel](linux-kernel.md)
 * Linux Tools
 * Python
 * Lua
