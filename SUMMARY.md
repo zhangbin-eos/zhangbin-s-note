@@ -3,6 +3,7 @@
 * [前言](README.md)
 * [Linux system program](linux-system-program.md)
 * [Linux Shell](linux-shell.md)
+  * [shell+sql](linux-shell/shell+sql.md)
 * [Linux kernel](linux-kernel.md)
 * [Linux Tools](linux-tools.md)
   * [Git](linux-tools/git.md)
