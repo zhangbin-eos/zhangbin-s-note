@@ -10,6 +10,7 @@
     * [In Linux](linux-tools/git/in-linux.md)
     * [In Windows](linux-tools/git/in-windows.md)
     * [git local seting](linux-tools/git/git_local_seting.md)
+    * [git work flow](linux-tools/git/git-work-flow.md)
 * [Python](python.md)
 * [Lua](lua.md)
 * [Work](work.md)
