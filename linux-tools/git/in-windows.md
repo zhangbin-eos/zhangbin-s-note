@@ -10,7 +10,7 @@ git 文档获取
 git 图形界面客户端
 [GUI Clients](https://git-scm.com/downloads/guis)
 
-#git-base安装
+# git-base安装
 需要安装的功能,git-base自带一个GUI界面,但是功能和Git bash差的比较多,可以简单的使用.
 ![图1](/assets/Git Bash 1.bmp)
 
@@ -28,7 +28,7 @@ git 图形界面客户端
 ![图6](/assets/Git Bash 6.bmp)
 
 
-#git-base使用
+# git-base使用
 ## 克隆一个远程库
 1. 新建一个测试用的目录F:\Work_Space\git_source_tree\test_git_base
 1. 鼠标右击选择Git Bash Here,就会弹s出一个git bash的界面,并且当前路径位于F:\Work_Space\git_source_tree\test_git_base
