@@ -3,3 +3,4 @@
 下载sourcetree
 下载git-base
 
+Git-2.15.0-32-bit
