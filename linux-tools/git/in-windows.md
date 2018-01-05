@@ -11,6 +11,43 @@ git 图形界面客户端
 [GUI Clients](https://git-scm.com/downloads/guis)
 
 #git-base安装
-
+需要安装的功能,git-base自带一个GUI界面,但是功能和Git bash差的比较多,可以简单的使用.
 ![图1](/assets/Git Bash 1.bmp)
+
+![图2](/assets/Git Bash 2.bmp)
+
+如果不使用HTTPS协议(只是在局域网内使用,或者单机使用)的话,不选择也行
+![图3](/assets/Git Bash 3.bmp)
+
+这个选项可以保证代码怎么进入的怎么出来,git不去做关于平台的判断,不修改回车换行等
+![图4](/assets/Git Bash 4.bmp)
+
+以下的两个选项任意选择其中一个,我选择第一个只是因为cmd.exe丑,但是其实两个长的没差哪去
+![图5](/assets/Git Bash 5.bmp)
+
+![图6](/assets/Git Bash 6.bmp)
+
+
+#git-base使用
+## 克隆一个远程库
+1. 新建一个测试用的目录F:\Work_Space\git_source_tree\test_git_base
+1. 鼠标右击选择Git Bash Here,就会弹s出一个git bash的界面,并且当前路径位于F:\Work_Space\git_source_tree\test_git_base
+![](/assets/Git Bash.bmp)
+1. 输入命令
+> git clone ssh://git@192.168.20.39/~/2017/lig_mtrx_dll
+
+即从git@192.168.20.39这个电脑上,拷贝一个仓库到这个路径下,注意,当前路径不能有非空的lig_mtrx_dll同名文件夹
+![](/assets/Git Bash_1.bmp)
+
+## 创建一个本地库
+1/2步和上面相同,然后新建一个lig_mtrx_dll的文件夹(可以是空的但是不能是一个仓库),使用命令,
+> git init
+
+即可,此时的lig_mtrx_dll会出现git用来记录版本信息的.git目录
+
+
+# git 图形界面客户端
+图形客户端都差不多,根据自己喜欢的风格选择吧
+
+
 
