@@ -52,7 +52,9 @@ git 图形界面客户端
 尽量在在联网的状态下安装,SourceTree安装时会自动下载一些依赖
 
 SourceTree在安装的时候需要注册,直接关闭掉软件,然后按照如下的步骤操作即可
-在目录C:\Users\{youruser}\AppData\Local\Atlassian\SourceTree 下创建文件accounts.json ，注意：{youruser}需要替换为登录系统用户名。如果找不到AppData,那么可能是AppData被隐藏了,设置文件夹选项,打开隐藏文件可见即可.
+在目录C:\Users\{youruser}\AppData\Local\Atlassian\SourceTree 下创建文件accounts.json
+**注意：{youruser}需要替换为登录系统用户名。如果找不到AppData,那么可能是AppData被隐藏了,设置文件夹选项,打开隐藏文件可见即可.**
+**注意：文件中,"zhangbin": "zhangbin.eos@foxmail.com" 这个要替换成你自己的名字和邮箱**
 
 写入如下内容：
 ```JSON
