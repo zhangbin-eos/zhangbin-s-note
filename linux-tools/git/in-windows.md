@@ -47,10 +47,38 @@ git 图形界面客户端
 
 # git 图形界面客户端
 一下以 SourceTree这款软件举例说明(因为我只安装过这一个图形客户端)
-## 下载地址
-[SourceTree](https://www.sourcetreeapp.com/)
+## 下载地址 > [SourceTree](https://www.sourcetreeapp.com/)
+我安装的时候,最新的版本是2.3.5.0,可以下载最新的使用
+尽量在在联网的状态下安装,SourceTree安装时会自动下载一些依赖
 
+SourceTree在安装的时候需要注册,直接关闭掉软件,然后按照如下的步骤操作即可
+在目录C:\Users\{youruser}\AppData\Local\Atlassian\SourceTree 下创建文件accounts.json ，注意：{youruser}需要替换为登录系统用户名。如果找不到AppData,那么可能是AppData被隐藏了,设置文件夹选项,打开隐藏文件可见即可.
 
+写入如下内容：
+```JSON
+[
+  {
+    "$id": "1",
+    "$type": "SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity",
+    "Authenticate": true,
+    "HostInstance": {
+      "$id": "2",
+      "$type": "SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount",
+      "Host": {
+        "$id": "3",
+        "$type": "SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount",
+        "Id": "atlassian account"
+      },
+      "BaseUrl": "https://id.atlassian.com/"
+    },
+    "Credentials": {
+      "$id": "4",
+      "$type": "SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account",
+      "zhangbin": "zhangbin.eos@foxmail.com"
+    },
+    "IsDefault": false
+  }
+]
 
-
-
+```
+重新启动软件，顺利进入界面 
