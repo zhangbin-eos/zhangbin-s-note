@@ -79,6 +79,15 @@ linux中,git的配置文件分为:全局配置文件,用户配置文件,仓库�
 
 # 六. 自动补全
 
+
+
+```
+if [ -f ~/.git-completion.bash ]; then
+. ~/.git-completion.bash
+fi 
+```
+
+
 	.git-completion.bash
 
 
