@@ -79,7 +79,7 @@ linux中,git的配置文件分为:全局配置文件,用户配置文件,仓库�
 
 # 六. 自动补全
 
-
+linux 下 git 的补全方法<IMG src="file:///C:\Users\liguo\AppData\Roaming\feiq\RichOle\3910689328.bmp">在git源码目录下,有个git-completion.bash文件,这个是git自动补全的脚本,把它放在/etc/profile.d里,再执行. /etc/profile就行了(注意这条命令是点空格/etc/profile)
 
 ```
 if [ -f ~/.git-completion.bash ]; then
