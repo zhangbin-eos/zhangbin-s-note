@@ -1,11 +1,9 @@
 > git work flow
 > git 工作流程
 
-# 概述
 # git使用规范(CPMS-34)
 version:01.00.0002
 author:张斌
-
 
 ## 分支约定
 
