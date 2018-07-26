@@ -5,6 +5,7 @@
 * [Linux Shell](linux-shell.md)
   * [shell+sql](linux-shell/shell+sql.md)
   * [shell num and str and list](linux-shell/shell-num-and-str-and-list.md)
+* [u-boot](u-boot.md)
 * [Linux kernel](linux-kernel.md)
 * [Linux Tools](linux-tools.md)
   * [Git](linux-tools/git.md)
@@ -15,9 +16,15 @@
     * [git command](linux-tools/git/git-command.md)
   * [Git and CI](linux-tools/git-and-ci.md)
     * [Jenkins](linux-tools/git-and-ci/jenkins.md)
+  * [Gitlab](linux-tools/gitlab.md)
+    * [安装](linux-tools/gitlab/an-zhuang.md)
+    * [配置和启动](linux-tools/gitlab/pei-zhi-he-qi-dong.md)
+    * 数据备份和数据迁移
+    * [账户注册和设置](linux-tools/gitlab/zhang-hu-zhu-ce-he-she-zhi.md)
+    * 项目创建和管理
+    * [CI&CD\(持续集成\)部署](linux-tools/gitlab/ciandcdchi-xu-ji-621029-bu-shu.md)
 * [Python](python.md)
 * [Lua](lua.md)
 * [Work](work.md)
   * [1](work/1.md)
-* [u-boot](u-boot.md)
 
