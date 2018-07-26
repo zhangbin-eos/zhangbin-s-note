@@ -14,8 +14,6 @@
     * [git local seting](linux-tools/git/git_local_seting.md)
     * [git work flow](linux-tools/git/git-work-flow.md)
     * [git command](linux-tools/git/git-command.md)
-  * [Git and CI](linux-tools/git-and-ci.md)
-    * [Jenkins](linux-tools/git-and-ci/jenkins.md)
   * [Gitlab](linux-tools/gitlab.md)
     * [安装](linux-tools/gitlab/an-zhuang.md)
     * [配置和启动](linux-tools/gitlab/pei-zhi-he-qi-dong.md)
