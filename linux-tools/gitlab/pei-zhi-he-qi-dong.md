@@ -53,7 +53,7 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
    执行了启动命令之后,gitlab需要1-2分钟的启动时间
 
    ```
-   [admin@lig-linux ~]$ sudo docker ps -a | grep gitlab
+   [admin@lig-linux ~]$ sudo docker ps -a --format='{{点Names}} {{点Status}}' | grep gitlab
    [sudo] admin 的密码：
    gitlab Up 8 hours (healthy)
    ```
@@ -89,7 +89,7 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
 
 ---
 
-* 在`sudo docker ps -a --format='{{.Names}} {{.Status}}'| grep gitlab`结果为health之后,再访问,否则会碰到404之类的错误
+* 在`sudo docker ps -a --format='{{点Names}} {{点Status}}'| grep gitlab`结果为health之后,再访问,否则会碰到404之类的错误
 * docker镜像启动的gitlab在异常关机时,退出状态异常,所以在下次开机后将不能正常的重启gitlab\(如果是正常关机没问题\),所以在这种情况下启动时,需要先停止并删除之前的启动信息
   ```
   docker stop gitlab
@@ -144,7 +144,7 @@ docker run --detach \
 
 #$1 = gitlab
 
-stat=$(docker ps -a --format='{{.Names}} {{.Status}}'| grep $1 | grep -E "[^un]healthy")
+stat=$(docker ps -a --format='{{点Names}} {{点Status}}'| grep $1 | grep -E "[^un]healthy")
 
 #echo $stat
 if [ -z "$stat" ] 
