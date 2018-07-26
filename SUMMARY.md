@@ -5,6 +5,7 @@
 * [Linux Shell](linux-shell.md)
   * [shell+sql](linux-shell/shell+sql.md)
   * [shell num and str and list](linux-shell/shell-num-and-str-and-list.md)
+  * [if&for&while](linux-shell/ifandforandwhile.md)
 * [u-boot](u-boot.md)
 * [Linux kernel](linux-kernel.md)
 * [Linux Tools](linux-tools.md)
