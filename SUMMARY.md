@@ -20,7 +20,7 @@
     * [配置和启动](linux-tools/gitlab/pei-zhi-he-qi-dong.md)
     * [数据备份和数据迁移](linux-tools/gitlab/shu-ju-bei-fen-he-shu-ju-qian-yi.md)
     * [账户注册和设置](linux-tools/gitlab/zhang-hu-zhu-ce-he-she-zhi.md)
-    * 项目创建和管理
+    * [项目创建和管理](linux-tools/gitlab/xiang-mu-chuang-jian-he-guan-li.md)
     * [CI&CD\(持续集成\)部署](linux-tools/gitlab/ciandcdchi-xu-ji-621029-bu-shu.md)
 * [Python](python.md)
 * [Lua](lua.md)
