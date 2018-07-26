@@ -3,7 +3,9 @@
 docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就可以通过docker来启动gitlab
 
 ## 启动前的准备
+
 ---
+
 为了确保启动成功,和gitlab的正常运行,需要做些准备工作
 
 1. gitlab包含的服务
@@ -23,7 +25,9 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
    也可以不关闭ssh服务,但是在启动的时候,需要配置一个网桥连接到镜像,让镜像使用和当前本机IP不同的IP地址,以避免端口冲突
 
 ## 启动
+
 ---
+
 1. 启动命令
 
    ```
@@ -57,13 +61,15 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
    这时就可以访问gitlab了,随便找个电脑,设置IP为服务器的同网段,然后在浏览器上输入服务器的地址192.168.20.39  
    后续的东西就很简单了,登录上去,按照指导做就行
 
-3. 重设管理员账户和密码
+3. 重设管理员账户和密码  
    在服务器上启动gitlab的bash
+
    ```
    sudo docker exec -it gitlab /bin/bash
    ```
 
    然后在终端中,使用以下命令进行重新设置管理员账户信息
+
    ```
    # gitlab-rails console production
    Loading production environment (Rails 4.2.8)
@@ -80,7 +86,9 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
    ```
 
 ## 注意
+
 ---
+
 * 在`sudo docker ps -a --format='{{.Names}} {{.Status}}'| grep gitlab`结果为health之后,再访问,否则会碰到404之类的错误
 * docker镜像启动的gitlab在异常关机时,退出状态异常,所以在下次开机后将不能正常的重启gitlab\(如果是正常关机没问题\),所以在这种情况下启动时,需要先停止并删除之前的启动信息
   ```
@@ -89,7 +97,9 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
   ```
 
 ## 启动脚本
+
 ---
+
 > \[admin@lig-linux ~\]$ cat gitlab.sh
 
 ```
@@ -117,7 +127,9 @@ docker run --detach \
 ```
 
 ## 检测gitlab状态的重启脚本
+
 ---
+
 > \[admin@lig-linux ~\]$ cat check\_docker\_gitlab\_stat.sh
 
 ```
