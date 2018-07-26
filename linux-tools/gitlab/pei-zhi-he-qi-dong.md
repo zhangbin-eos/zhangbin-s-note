@@ -38,6 +38,7 @@ docker run --detach \
      - --volume 映射了一些路径,可以看出,在服务器上,gitlab的数据是存放在/home/gitlab/目录下的,而在gitlab的镜像中,gitlab的数据是在冒号右边的路径中
 
 1. 查看启动状态
+执行了启动命令之后,gitlab需要1-2分钟的启动时间
 ```
 [admin@lig-linux ~]$ sudo docker ps -a --format='{{.Names}} {{.Status}}'| grep gitlab
 [sudo] admin 的密码：
