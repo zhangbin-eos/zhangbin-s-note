@@ -46,11 +46,92 @@ gitlab Up 8 hours (healthy)
 这时就可以访问gitlab了,随便找个电脑,设置IP为服务器的同网段,然后在浏览器上输入服务器的地址192.168.20.39
 后续的东西就很简单了,登录上去,按照指导做就行
 2. 重设管理员账户和密码
-在服务器上运行
-```启动gitlab的bash
+在服务器上启动gitlab的bash
+```
 sudo docker exec -it gitlab /bin/bash
 ```
+然后在终端中,使用以下命令进行重新设置管理员账户信息
+```
+# gitlab-rails console production
+Loading production environment (Rails 4.2.8)
+irb(main):001:0> user = User.where(id: 1).first
+=> #<User id: 1, email: "admin@example.com"......
+irb(main):009:0> user.password = '12345678'
+=> "12345678"
+irb(main):010:0> user.password_confirmation = '12345678'
+=> "12345678"
+irb(main):011:0> user.save!
+Enqueued ActionMailer::DeliveryJob (Job ID: 510bb5be-a156-4522-9983-44d8a895e92a) to Sidekiq(mailers) with arguments: "DeviseMailer", "password_change", "deliver_now", gid://gitlab/User/1
+=> true
+irb(main):011:0> exit
+```
 
+## 注意
+- 在```sudo docker ps -a --format='{{.Names}} {{.Status}}'| grep gitlab```结果为health之后,再访问,否则会碰到404之类的错误
+- docker镜像启动的gitlab在异常关机时,退出状态异常,所以在下次开机后将不能正常的重启gitlab(如果是正常关机没问题),所以在这种情况下启动时,需要先停止并删除之前的启动信息
+```
+docker stop gitlab
+docker rm -f  gitlab
+```
 
+## 启动脚本
+> [admin@lig-linux ~]$ cat gitlab.sh 
 
+```
+ifconfig enp2s0 192.168.20.39
+ifconfig enp2s0 netmask 255.255.0.0
 
+#如果涉及网络修改的时候需要重新启动docker 的守护进程
+systemctl restart docker.service 
+systemctl stop sshd 
+
+docker stop gitlab
+docker rm -f  gitlab
+
+docker run --detach \
+     --hostname 192.168.20.39 \
+     --publish 443:443 \
+     --publish 80:80 \
+     --publish 22:22 \
+     --name gitlab \
+     --restart always \
+     --volume /home/gitlab/config:/etc/gitlab \
+     --volume /home/gitlab/logs:/var/log/gitlab \
+     --volume /home/gitlab/data:/var/opt/gitlab \
+     docker.io/gitlab/gitlab-ce
+```
+
+## 检测gitlab状态的重启脚本
+> [admin@lig-linux ~]$ cat check_docker_gitlab_stat.sh 
+
+```
+#! /bin/bash
+# zhangbin.eos@foxmail.com
+
+#need run by root
+#every 10 min check once
+#see /etc/crontab 
+
+#get docker gitlab stat
+
+#$1 = gitlab
+
+stat=$(docker ps -a --format='{{.Names}} {{.Status}}'| grep $1 | grep -E "[^un]healthy")
+
+#echo $stat
+if [ -z "$stat" ] 
+then
+        echo "unhealthy or Exited" > /dev/null
+        #this shell need root run 
+        if [ "$1" = "gitlab" ]
+        then
+                echo "$(date) $1 unhealthy or Exited ,will restart " >> /home/admin/check_gitlab.log
+                sh /home/admin/gitlab.sh > /dev/null
+
+        fi
+else 
+        #do nothing
+        echo "healthy" > /dev/null
+        logger -i -p info -t "check docker state" "$stat"
+fi
+```
