@@ -53,7 +53,7 @@ docker已经安装完成,gitlab的docker镜像也下载完毕,接下来我们就
    执行了启动命令之后,gitlab需要1-2分钟的启动时间
 
    ```
-   [admin@lig-linux ~]$ sudo docker ps -a --format='{{.Names}} {{.Status}}'| grep gitlab
+   [admin@lig-linux ~]$ sudo docker ps -a | grep gitlab
    [sudo] admin 的密码：
    gitlab Up 8 hours (healthy)
    ```
