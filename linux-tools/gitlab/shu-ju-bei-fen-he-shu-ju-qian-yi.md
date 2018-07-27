@@ -54,11 +54,50 @@ tar -czvpf $bpsavedir/bak$(date +%Y%m%d%H).tar.gz --exclude *.log  -C /home/gitl
 其中$bpsavedir/bak$\(date +%Y%m%d%H\).tar.gz是要生成的备份文件的路径和文件名+时间,压缩格式是gzip
 
 将**$bpsavedir** 替换为一个路径否则将在/下生成bak2018010101.tar.gz这样的备份文件
+
 **这是一个备份脚本**
+
 ```
+#! /bin/bash
+
+srcpath="/home/gitlab/"
+srcfile=$(ls -A $srcpath)
+
+objpath="/mnt/disk/gitlab-bak"
+objname="bak$(date +%Y%m%d%H%M).tar.gz"
+exclude="*.log"
+
+#备份到了另一个硬盘上
+mount /dev/mapper/vg_linuxserver-lv_home /mnt/disk
+
+tar -czpf $objpath/$objname  --exclude $exclude  -C /home/gitlab/ $(ls -A /home/gitlab/)
+tree /mnt/disk/ >>  /home/admin/backup.log
+
+umount /mnt/disk
 ```
-**这是一个定时执行的配置**
+**这是一个定时执行软件crontabs的配置**
 ```
+[root@lig-linux admin]# cat /etc/crontab 
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+#每十分钟检测一次状态
+*/10 *  *  *  * root       /home/admin/check_docker_gitlab_stat.sh gitlab
+
+#每6小时进行一次备份
+*   */6 *  *  * root       /home/admin/backup-gitlab.sh
 ```
 ### 提示
 
