@@ -84,5 +84,5 @@ gitlab-ce指的是个人免费板,企业版是gitlab-ee,收费的
 
 ### gitlab镜像安装
 这个就不用装了,镜像就是gitlab的运行环境,每次gitlab启动,都是通过docker来启动这个镜像从而启动gitlab的所有服务
-接下来参考[配置和启动](linux-tools/gitlab/pei-zhi-he-qi-dong.md)
+接下来参考[配置和启动](/linux-tools/gitlab/pei-zhi-he-qi-dong.md)
 
