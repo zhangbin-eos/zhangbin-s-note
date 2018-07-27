@@ -20,7 +20,9 @@
 ## 设置
 ---
 ### 普通用户的设置
-1. 点击自己的头像(右上角)->选择Settings->选择SSH Key(左侧)
+1. 设置ssh key
+ssh key的设置是为了让你本地的git能够无密码的登录你自己的账号,进行上传和下载的操作
+点击自己的头像(右上角)->选择Settings->选择SSH Key(左侧)
 ![](/assets/setsshkey.jpg)
 
 1. 在自己电脑的控制台上(或者是git bash)运行下面的命令
@@ -64,6 +66,25 @@ Welcome to GitLab, Administrator!
 Connection to 192.168.20.39 closed.
 ```
 **这个的意思是ssh能访问,但是不允许登录,这个是gitlab添加的限制**
+然后就可以使用git来客隆服务器上的代码了,使用::
+```
+#或者使用git clone git@192.168.20.39/learn/learnGitBranching.git
+>>> git clone http://192.168.20.39/learn/learnGitBranching.git          
+Cloning into 'learnGitBranching'...
+remote: Counting objects: 15622, done.
+remote: Compressing objects: 100% (6152/6152), done.
+remote: Total 15622 (delta 8964), reused 15622 (delta 8964)
+Receiving objects: 100% (15622/15622), 48.30 MiB | 10.96 MiB/s, done.
+Resolving deltas: 100% (8964/8964), done.
+Checking connectivity... done.
+Checking out files: 100% (146/146), done.
+
+>>> ls learnGitBranching/
+assets  CNAME  Gruntfile.js  lib  LICENSE.md  npm-shrinkwrap.json  
+package.json  README.md  src  __tests__  todo.txt
+```
+即可获取到服务器上的源码
+**你能看到项目,能克隆项目,但是不见得能够提交**
 
 ### 管理员用户的设置
 管理员拥有最高的权限,能够限制普通用户登录或删除普通用户等功能,同时管理员还可以修改gitlab服务器的一些全局设置

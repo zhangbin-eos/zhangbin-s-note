@@ -54,7 +54,12 @@ tar -czvpf $bpsavedir/bak$(date +%Y%m%d%H).tar.gz --exclude *.log  -C /home/gitl
 其中$bpsavedir/bak$\(date +%Y%m%d%H\).tar.gz是要生成的备份文件的路径和文件名+时间,压缩格式是gzip
 
 将**$bpsavedir** 替换为一个路径否则将在/下生成bak2018010101.tar.gz这样的备份文件
-
+**这是一个备份脚本**
+```
+```
+**这是一个定时执行的配置**
+```
+```
 ### 提示
 
 备份操作在linux中可以通过定时软件来进行定时备份,同时,备份的数据最好存放在其他的硬盘上,总之写好备份脚本后,就不用管了
