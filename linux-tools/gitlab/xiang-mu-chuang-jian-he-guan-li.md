@@ -62,14 +62,18 @@ Snippets
 ### 仓库的权限控制
 上节中提到,在Settings->General->Permissions中有Repository的权限设置,但是只是限制了项目成员访问或者所有人可以访问,实际使用的过程中,仓库作为项目文件的存储实体,是一个项目的主要成果,所以至关重要,同时,仓库在实际的开发过程中,为了方便管理和高效开发,会划分几个分支,项目成员对分支的访问权限也异常重要.
 
+#### 保护分支
 在项目的**Settings->Repository->Protected Branches**(如下图),可以设置保护分支,可以设置分支的运行推送的和允许合并的项目组成员角色,如图可以避免非项目组成员的提交和合并,可以避免测试人员在测试过程中意外的合并或者提交.设置保护分支可以使用通配符,比如***protect/* *** 可以设置 protect/*开头的所有分支.[参考wildcard-protected-branches](https://docs.gitlab.com/ee/user/project/protected_branches.html#wildcard-protected-branches)
 ![](/assets/保护分支设置.jpg)
 
-
+#### 保护标签
+标签是git仓库中的一种标记,通常用来记录版本发布,所以,对于一些特殊格式的标签,需要限制项目成员对其的读写操作,避免误操作.
+在项目的**Settings->Repository->Protected Tags**可设置创建标签的权限(删除标签的权限仅master用户有),例如可以设置`v* or *-release` 标签仅master创建的权限.
 
 ### 设置参与项目的人员
 参考设置组成员即可
 值得一提的是成员角色,项目成员有四种角色
+
 
 1. Master
     项目的管理者
@@ -92,8 +96,9 @@ Snippets
 gitlab的服务器搭建完成后,基本项目流程其实也就出现了,并且,这个流程会随着服务器功能的完善而越发的严谨细致帮助我们避免错误.提高效率
 
 ### 标准流程
-
-
+参考官方流程的说明
+[什么是gitlab flow](https://docs.gitlab.com/ee/university/training/gitlab_flow.html#doc-nav)
+[Introduction to GitLab Flow](https://docs.gitlab.com/ee/workflow/gitlab_flow.html#doc-nav)
 ### 简化流程
 
 
