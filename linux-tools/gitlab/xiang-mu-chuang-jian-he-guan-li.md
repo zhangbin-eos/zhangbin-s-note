@@ -29,6 +29,43 @@
 ### 创建一个项目
 ![](/assets/create_pjt.jpg)
 ### 设置权限
+一个(gitlab)项目中,主要包含以下的可编辑项(在项目的Settings->General->Permissions)
+```
+Issues
+    需求和BUG
+    Lightweight issue tracking system for this project
+
+Repository
+    仓库,项目(源)文件的主要存贮位置,并记录文件修改差异等
+    View and edit files in this project
+
+Merge requests
+    合并请求,用于新功能的提交或者BUG修复
+    Submit changes to be merged upstream
+
+Pipelines
+    自动集成和测试功能
+    Build, test, and deploy your changes
+
+Wiki
+    文档界面
+    Pages for project documentation
+
+Snippets
+    与其他仓库共享代码
+    Share code pastes with others out of Git repository
+```
+在创建项目的时候,不同的visibility level,在这几项上对应不同的处理方式,每一项中,都包含着两个控制选项
+- 1.所有人可以访问
+- 2.仅项目成员可以访问
+
+### 仓库的权限控制
+上节中提到,在Settings->General->Permissions中有Repository的权限设置,但是只是限制了项目成员访问或者所有人可以访问,实际使用的过程中,仓库作为项目文件的存储实体,是一个项目的主要成果,所以至关重要,同时,仓库在实际的开发过程中,为了方便管理和高效开发,会划分几个分支,项目成员对分支的访问权限也异常重要.
+
+在项目的**Settings->Repository->Protected Branches**(如下图),可以设置保护分支,可以设置分支的运行推送的和允许合并的项目组成员角色,如图可以避免非项目组成员的提交和合并,可以避免测试人员在测试过程中意外的合并或者提交.设置保护分支可以使用通配符,比如***protect/* *** 可以设置 protect/*开头的所有分支.`参考[]()`
+![](/assets/保护分支设置.jpg)
+
+
 
 ### 设置参与项目的人员
 参考设置组成员即可
