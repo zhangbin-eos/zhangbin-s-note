@@ -3,8 +3,8 @@
 ## Git的安装
 
 ### 下载Git源码包
-
-* 建议使用源码安装,因为rpm包通常版本太低,导致很多功能无法使用
+* Ubuntu的可以使用`apt-get install git `进行安装,版本还是比较高的
+* centos建议使用源码安装,因为rpm包通常版本太低,导致很多功能无法使用
   官方源码下载[https://www.kernel.org/pub/software/scm/git/](https://www.kernel.org/pub/software/scm/git/)
 * 选择一个发布时间比较新的版本下载,选择gz格式的包,xz的不好解压
 * 版本低于2.0.0的可能在push时出现一下问题
