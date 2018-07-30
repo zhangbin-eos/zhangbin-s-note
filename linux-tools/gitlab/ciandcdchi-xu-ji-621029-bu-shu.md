@@ -61,10 +61,16 @@ test_1:
         script:
                 - sh ./.lig_ci.sh
 ```
-**stage**是关键字,只能是build,test,deploy
-**before_script**:运行在每个测试项之前
-**after_script**:运行在每个测试项之后
+
+- **stage**是关键字,只能是build,test,deploy
+- **before_script**:运行在每个测试项之前
+- **after_script**:运行在每个测试项之后
 如:
-test_1的执行过程:`before_script->test_1->after_script`
-**script**命令,其后的以`-`开头的是shell命令,注意test_1中调用了一个仓库中的测试脚本`.lig_ci.sh`
+```
+test_1的执行过程:before_script->test_1->after_script
+```
+- **script**命令,其后的以`-`开头的是shell命令,注意test_1中调用了一个仓库中的测试脚本`.lig_ci.sh`
+
+
+
 
