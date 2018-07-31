@@ -60,6 +60,7 @@ tar -czvpf $bpsavedir/bak$(date +%Y%m%d%H).tar.gz --exclude *.log  -C /home/gitl
 ```
 #! /bin/bash
 
+cur_data="$(date +%Y%m%d%H%M)"
 srcpath="/home/gitlab/"
 srcfile=$(ls -A $srcpath)
 
@@ -67,11 +68,12 @@ objpath="/mnt/disk/gitlab-bak"
 objname="bak$(date +%Y%m%d%H%M).tar.gz"
 exclude="*.log"
 
-#备份到了另一个硬盘上
+
 mount /dev/mapper/vg_linuxserver-lv_home /mnt/disk
 
 tar -czpf $objpath/$objname  --exclude $exclude  -C /home/gitlab/ $(ls -A /home/gitlab/)
-tree /mnt/disk/ >>  /home/admin/backup.log
+# 记录备份信息
+echo -e "$objname\t" "$(du -h $objpath/$objname )"  >>  /home/admin/backup.log
 
 umount /mnt/disk
 ```
