@@ -6,6 +6,7 @@
   * [shell+sql](linux-shell/shell+sql.md)
   * [shell num and str and list](linux-shell/shell-num-and-str-and-list.md)
   * [if&for&while](linux-shell/ifandforandwhile.md)
+  * [file-cmd](linux-shell/file-cmd.md)
 * [u-boot](u-boot.md)
 * [Linux kernel](linux-kernel.md)
   * [mpc5125ads移植记录](linux-kernel/mpc5125adsyi-zhi-ji-lu.md)
