@@ -97,7 +97,7 @@ MAILTO=root
 */10 *  *  *  * root       /home/admin/check_docker_gitlab_stat.sh gitlab
 
 #每6小时进行一次备份
-*   */6 *  *  * root       /home/admin/backup-gitlab.sh
+0   */6 *  *  * root       /home/admin/backup-gitlab.sh
 ```
 
 

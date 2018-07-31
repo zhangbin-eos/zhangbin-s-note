@@ -8,6 +8,7 @@
   * [if&for&while](linux-shell/ifandforandwhile.md)
 * [u-boot](u-boot.md)
 * [Linux kernel](linux-kernel.md)
+  * [mpc5125ads移植记录](linux-kernel/mpc5125adsyi-zhi-ji-lu.md)
 * [Linux Tools](linux-tools.md)
   * [Git](linux-tools/git.md)
     * [In Linux](linux-tools/git/in-linux.md)
