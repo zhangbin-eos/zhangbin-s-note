@@ -77,6 +77,33 @@ echo -e "$objname\t" "$(du -h $objpath/$objname )"  >>  /home/admin/backup.log
 
 umount /mnt/disk
 ```
+**这是一个清除冗余备份的脚本**
+```
+#!/bin/bash
+
+# one mouth run once
+# every mouth 01day 00h 00m run 
+
+objpath="/mnt/disk/gitlab-bak"
+# mount bak disk
+mount /dev/mapper/vg_linuxserver-lv_home /mnt/disk
+file_list="$(ls $objpath | grep -v -E "bak[0-9]{6}010000.tar.gz")" 
+
+# 判断下文件列表是不是空
+if [ -z $file_list  ]
+then
+        umount /mnt/disk
+        exit 1
+fi
+
+#切花到目标目录
+cd $objpath
+rm -rf $file_list
+#随便切换个目录就行,主要是为了umont的时候没有在挂载目录下就行,否则会挂载失败
+cd
+ 
+umount /mnt/disk
+```
 **这是一个定时执行软件crontabs的配置**
 ```
 [root@lig-linux admin]# cat /etc/crontab 
