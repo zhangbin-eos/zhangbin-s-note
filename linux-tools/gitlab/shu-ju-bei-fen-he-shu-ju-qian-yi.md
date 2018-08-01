@@ -87,6 +87,8 @@ umount /mnt/disk
 objpath="/mnt/disk/gitlab-bak"
 # mount bak disk
 mount /dev/mapper/vg_linuxserver-lv_home /mnt/disk
+
+# 只保留每月1日0点的(这个脚本在crontab中设置为每月1日1点运行)
 file_list="$(ls $objpath | grep -v -E "bak[0-9]{6}010000.tar.gz")" 
 
 # 判断下文件列表是不是空
