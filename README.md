@@ -3,9 +3,9 @@
 this is zhangbin's note  
 本书的链接
 
-> gitbook: [https://git.gitbook.com/zhangbin-eos/zhangbin-s-note.git](https://git.gitbook.com/zhangbin-eos/zhangbin-s-note.git)
+>  [Gitbook](https://legacy.gitbook.com/book/zhangbin-eos/zhangbin-s-note/details)
 >
-> github: [https://github.com/zhangbin-eos/zhangbin-s-note.git](https://github.com/zhangbin-eos/zhangbin-s-note.git)
+>  [Github](https://github.com/zhangbin-eos/zhangbin-s-note.git)
 
 
 
