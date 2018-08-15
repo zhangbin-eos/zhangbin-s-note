@@ -60,7 +60,7 @@ git 图形界面客户端
 SourceTree在安装的时候需要注册,直接关闭掉软件,然后按照如下的步骤操作即可  
 在目录C:\Users{youruser}\AppData\Local\Atlassian\SourceTree 下创建文件accounts.json  
 **注意：{youruser}需要替换为登录系统用户名。如果找不到AppData,那么可能是AppData被隐藏了,设置文件夹选项,打开隐藏文件可见即可.**  
-**注意：文件中,"zhangbin": "zhangbin.eos@foxmail.com" 这个要替换成你自己的名字和邮箱**
+**注意：文件中,"Username": "zhangbin","Email": "zhangbin.eos@foxmail.com" 这个要替换成你自己的名字和邮箱**
 
 写入如下内容：
 
@@ -83,7 +83,8 @@ SourceTree在安装的时候需要注册,直接关闭掉软件,然后按照如�
     "Credentials": {
       "$id": "4",
       "$type": "SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account",
-      "zhangbin": "zhangbin.eos@foxmail.com"
+      "Username": "zhangbin",
+      "Email": "zhangbin.eos@foxmail.com"
     },
     "IsDefault": false
   }
@@ -108,7 +109,7 @@ SourceTree在安装的时候需要注册,直接关闭掉软件,然后按照如�
 
 1. 将生成的公钥发送给管理员,公钥文件默认名为`id_rsa.pub` 
 
-1. 在sourcetree上,选择工具-->选项中,选择秘钥管理工具为openssh
+1. 在sourcetree上,选择工具-->选项中,选择秘钥管理工具为**openssh**(重点)
 
 1. 在sourcetree上,选择工具-->添加秘钥,选择生成的id_rsa文件
 
