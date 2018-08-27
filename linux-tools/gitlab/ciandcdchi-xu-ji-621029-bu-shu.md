@@ -23,12 +23,19 @@ sudo apt-get install gitlab-runner=10.0.0
 su
 gitlab-ci-multi-runner register
 ```
+**非root用户注册可能造成权限不足,导致自动集成/测试过程失败**
 此过程中会需要填写服务器的url和token,和runner的标签和描述,标签和表述随便填,后面可以修改,选择runner的环境为shell环境,然后注册成功后,gitlab服务器上的runner settings中会显示注册的runner信息
-	
+
 1. 重启runnerPC
 1. 在项目中添加.gitliab_ci.yml(参考gitlab相关说明和CPMS-34的例子)
 1. 提交修改,查看gitlab服务器上的ci结果
 ![](/assets/ci_res.jpg)
+
+其他的命令(需要root) 
+- sudo gitlab-ci-multi-runner run 
+- sudo gitlab-ci-multi-runner list
+
+gitlab-ci-multi-runner的配置文件默认在/etc/下,可以在命令list中看到具体的路径
 
 ## .gitliab_ci.yml文件说明
 - [官方说明](https://docs.gitlab.com/ee/ci/yaml/#doc-nav)
