@@ -7,6 +7,7 @@
   * [shell num and str and list](linux-shell/shell-num-and-str-and-list.md)
   * [if&for&while](linux-shell/ifandforandwhile.md)
   * [file-cmd](linux-shell/file-cmd.md)
+  * [curl命令使用](curlming-ling-shi-yong.md)
 * [u-boot](u-boot.md)
 * [Linux kernel](linux-kernel.md)
   * [mpc5125ads移植记录](linux-kernel/mpc5125adsyi-zhi-ji-lu.md)
@@ -18,6 +19,7 @@
     * [git local seting](linux-tools/git/git_local_seting.md)
     * [git work flow](linux-tools/git/git-work-flow.md)
     * [git command](linux-tools/git/git-command.md)
+    * [bash命令提示符设置](linux-tools/git/bashming-ling-ti-shi-fu-she-zhi.md)
   * [Gitlab](linux-tools/gitlab.md)
     * [安装](linux-tools/gitlab/an-zhuang.md)
     * [配置和启动](linux-tools/gitlab/pei-zhi-he-qi-dong.md)
@@ -27,6 +29,10 @@
     * [CI&CD\(持续集成\)部署](linux-tools/gitlab/ciandcdchi-xu-ji-621029-bu-shu.md)
 * [Python](python.md)
 * [Lua](lua.md)
-* [Work](work.md)
-  * [1](work/1.md)
+  * [lua交叉编译](lua/luajiao-cha-bian-yi.md)
+  * [列子](lua/lie-zi.md)
+* [流媒体](liu-mei-ti.md)
+  * ffmpeg
+* [Other-Tool](other-tool.md)
+  * [Keil相关](keilxiang-guan/keilxiang-guan.md)
 
