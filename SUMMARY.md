@@ -38,4 +38,6 @@
   * ffmpeg
 * [Other-Tool](other-tool.md)
   * [Keil相关](keilxiang-guan/keilxiang-guan.md)
+* [GNU C](gnu-c.md)
+  * [\_\_attribute\_\_](gnu-c/attribute.md)
 
