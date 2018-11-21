@@ -13,6 +13,7 @@
 * [Linux kernel](linux-kernel.md)
   * [mpc5125ads移植记录](linux-kernel/mpc5125adsyi-zhi-ji-lu.md)
   * [usb host debug](linux-kernel/usb-host-debug.md)
+  * [net-phy-driver](linux-kernel/net-phy-driver.md)
 * [Linux Tools](linux-tools.md)
   * [Git](linux-tools/git.md)
     * [In Linux](linux-tools/git/in-linux.md)
@@ -35,7 +36,7 @@
   * [lua交叉编译](lua/luajiao-cha-bian-yi.md)
   * [列子](lua/lie-zi.md)
 * [流媒体](liu-mei-ti.md)
-  * ffmpeg
+  * [ffmpeg](liu-mei-ti/ffmpeg.md)
 * [Other-Tool](other-tool.md)
   * [Keil相关](keilxiang-guan/keilxiang-guan.md)
 * [GNU C](gnu-c.md)
